@@ -3,6 +3,7 @@ from typing import List, Tuple
 import pygame as pg
 from dataclasses import dataclass, field
 import math
+from config import *
 
 
 @dataclass
@@ -60,7 +61,7 @@ class Camera:
                         answer.append((Point(x, y), distance, angle - self.yaw + self.fov // 2))
                         x = 1
                         break
-            angle += 70/200
+            angle += fov/NUM_OF_RAYS
 
         return answer
 
